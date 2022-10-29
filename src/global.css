@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: #323238;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding-top: 120px;
+}
+
+@media (max-width: 705px) {
+  body {
+    padding-top: 40px;
+  }
+}
