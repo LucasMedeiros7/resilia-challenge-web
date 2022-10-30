@@ -1,7 +1,7 @@
 import styles from './Home.module.css';
 import { PoloCard } from '../components/PoloCard';
-import { useFetch } from '../hooks/useFetch';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { getAllPolos } from '../services/poloServices';
 
 const normalizeName = name => {
   return name
@@ -10,17 +10,30 @@ const normalizeName = name => {
     .replace(/[\u0300-\u036f]/g, '');
 };
 
-const filterPolos = (data, search) => {
-  return data.filter(polo =>
+const filterPolos = (polos, search) => {
+  return polos.filter(polo =>
     normalizeName(polo.name).includes(normalizeName(search))
   );
 };
 
 export function Home() {
-  const { data } = useFetch('http://localhost:3333/polos');
   const [search, setSearch] = useState('');
+  const [polos, setPolos] = useState([]);
 
-  const polos = search.length > 0 ? filterPolos(data, search) : data;
+  async function fetchData() {
+    try {
+      const response = await getAllPolos();
+      setPolos(response);
+    } catch (e) {
+      console.log(err);
+    }
+  }
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const filteredPolos = search.length > 0 ? filterPolos(polos, search) : polos;
 
   return (
     <main className={styles.container}>
@@ -37,7 +50,7 @@ export function Home() {
       </header>
 
       <section className={styles.polos}>
-        {polos?.map((polo, index) => (
+        {filteredPolos?.map((polo, index) => (
           <PoloCard key={index} polo={polo} quantity={polo.students.length} />
         ))}
       </section>

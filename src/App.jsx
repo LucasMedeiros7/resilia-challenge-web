@@ -1,8 +1,8 @@
 import { Home } from './pages/Home';
-
-import './global.css';
 import { Polo } from './pages/Polo';
 import { Navigate, Route, Routes } from 'react-router-dom';
+
+import './global.css';
 
 export function App() {
   return (

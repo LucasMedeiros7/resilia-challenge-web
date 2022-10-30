@@ -1,0 +1,30 @@
+.modal_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 32px;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.modal_container .button_modal {
+  display: flex;
+  width: min-content;
+  height: min-content;
+  border: none;
+  background-color: transparent;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.modal {
+  background-color: #323238;
+  padding: 18px;
+  border-radius: 8px;
+}
