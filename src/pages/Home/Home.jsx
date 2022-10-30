@@ -1,24 +1,18 @@
 import styles from './Home.module.css';
-import { PoloCard } from '../components/PoloCard';
 import { useEffect, useState } from 'react';
-import { getAllPolos } from '../services/poloServices';
-
-const normalizeName = name => {
-  return name
-    .toLowerCase()
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '');
-};
-
-const filterPolos = (polos, search) => {
-  return polos.filter(polo =>
-    normalizeName(polo.name).includes(normalizeName(search))
-  );
-};
+import { PoloCard } from '../../components/PoloCard/PoloCard';
+import { getAllPolos } from '../../services/poloServices';
+import { normalizeName } from '../../utils/normalizeName';
 
 export function Home() {
   const [search, setSearch] = useState('');
   const [polos, setPolos] = useState([]);
+
+  function filterPolos(polos, search) {
+    return polos.filter(polo =>
+      normalizeName(polo.name).includes(normalizeName(search))
+    );
+  }
 
   async function fetchData() {
     try {

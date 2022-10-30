@@ -1,8 +1,8 @@
 import { X } from 'phosphor-react';
+import { Modal } from '../Modal/Modal';
 import { useState } from 'react';
-import { useLocation } from 'react-router-dom';
-import { Modal } from './Modal';
-import { RemoveStudent } from './RemoveStudent/RemoveStudent';
+import { RemoveStudent } from '../RemoveStudent/RemoveStudent';
+
 import styles from './StudentInfo.module.css';
 
 export function StudentInfo({ student, onDelete }) {

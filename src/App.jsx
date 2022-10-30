@@ -1,5 +1,5 @@
-import { Home } from './pages/Home';
-import { Polo } from './pages/Polo';
+import { Home } from './pages/Home/Home';
+import { Polo } from './pages/Polo/Polo';
 import { Navigate, Route, Routes } from 'react-router-dom';
 
 import './global.css';

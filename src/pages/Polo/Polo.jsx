@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react';
-import { Modal } from '../components/Modal';
 import { CaretLeft, Plus } from 'phosphor-react';
-import { StudentInfo } from '../components/StudentInfo';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
-import { getStudentsByPoloId } from '../services/studentServices.js';
+
+import { Modal } from '../../components/Modal/Modal';
+import { StudentInfo } from '../../components/StudentInfo/StudentInfo';
+import { getStudentsByPoloId } from '../../services/studentServices';
+
 import styles from './Polo.module.css';
 
 export function Polo() {

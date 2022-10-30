@@ -16,7 +16,6 @@ export function PoloCard({ polo, quantity }) {
 
       <footer>
         <UserCircle size={19} color="#ffd000" weight="regular" />
-
         <p>
           Total de {quantity}
           {quantity === 1 ? ' aluno cadastrado' : ' alunos cadastrados'}
