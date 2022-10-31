@@ -56,3 +56,17 @@
   outline: none;
   cursor: pointer;
 }
+
+@media (max-width: 545px) {
+  .container_remove .buttons {
+    flex-direction: column;
+  }
+
+  .selects {
+    flex-direction: column;
+  }
+
+  .form_transfer_student button {
+    margin: 0;
+  }
+}

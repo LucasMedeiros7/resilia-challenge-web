@@ -49,7 +49,7 @@ export function Polo() {
             weight="regular"
             className={styles.exit}
             alt="Voltar"
-            onClick={() => navigate('/home')}
+            onClick={() => navigate('/')}
           />
           Polo - {poloName}
         </h1>

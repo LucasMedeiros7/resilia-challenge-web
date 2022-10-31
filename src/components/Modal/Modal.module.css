@@ -27,3 +27,13 @@
   padding: 18px;
   border-radius: 8px;
 }
+
+@media (max-width: 780px) {
+  .modal_container {
+    padding: 0;
+  }
+
+  .modal {
+    width: 90%;
+  }
+}

@@ -8,8 +8,7 @@ export function App() {
   return (
     <Routes>
       <Route path="*" element={<Navigate to="/" replace />} />
-      <Route path="resilia-challenge-web" element={<Home />} />
-      <Route path="/home" element={<Home />} />
+      <Route path="/" element={<Home />} />
       <Route path="polos/:id" element={<Polo />} />
     </Routes>
   );
