@@ -1,0 +1,55 @@
+.form_transfer_student {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  padding: 64px 122px;
+  color: #fff;
+}
+
+.form_transfer_student h2 {
+  margin-bottom: 22px;
+}
+
+.form_transfer_student button {
+  margin-top: 22px;
+  margin-left: 28px;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+  color: #000000;
+  font-weight: bold;
+  background-color: #ffd000;
+  cursor: pointer;
+  transition: 0.12s;
+}
+
+.form_transfer_student button:hover {
+  background-color: #fff9a6;
+}
+
+.selects {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.selects label {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.selects button {
+  display: flex;
+  margin-top: 0;
+}
+
+.selects select {
+  border-radius: 8px;
+  padding: 5px 8px;
+  border: none;
+  font-size: 14px;
+  font-weight: bold;
+  outline: none;
+  cursor: pointer;
+}

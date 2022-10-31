@@ -22,6 +22,7 @@
 }
 
 .modal {
+  width: 60%;
   background-color: #323238;
   padding: 18px;
   border-radius: 8px;

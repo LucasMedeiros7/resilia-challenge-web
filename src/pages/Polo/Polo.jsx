@@ -7,6 +7,7 @@ import { StudentInfo } from '../../components/StudentInfo/StudentInfo';
 import { getStudentsByPoloId } from '../../services/studentServices';
 
 import styles from './Polo.module.css';
+import { AddStudent } from '../../components/AddStudent/AddStudent';
 
 export function Polo() {
   const { id } = useParams();
@@ -14,7 +15,7 @@ export function Polo() {
 
   const [isVisibleModal, setIsVisibleModal] = useState(false);
   const [students, setStudents] = useState([]);
-  const [wasDeleted, setWasDeleted] = useState(false);
+  const [modifyStudents, setModifyStudents] = useState(false);
 
   const navigate = useNavigate();
 
@@ -31,13 +32,13 @@ export function Polo() {
     }
   }
 
-  function handleDeleted() {
-    setWasDeleted(!wasDeleted);
+  function handleUpateStudents() {
+    setModifyStudents(!modifyStudents);
   }
 
   useEffect(() => {
     fetchData();
-  }, [wasDeleted]);
+  }, [modifyStudents]);
 
   return (
     <main className={styles.container}>
@@ -53,19 +54,28 @@ export function Polo() {
           Polo - {poloName}
         </h1>
         <button onClick={handleModal}>
-          Adicionar novo aluno <Plus size={16} className={styles.svg} />
+          Nova aluna(o)
+          <Plus alt="novo aluno(a)" size={16} className={styles.svg} />
         </button>
       </header>
 
       <section className={styles.students}>
         {students?.map((student, key) => (
-          <StudentInfo key={key} student={student} onDelete={handleDeleted} />
+          <StudentInfo
+            key={key}
+            student={student}
+            updateStudents={handleUpateStudents}
+          />
         ))}
       </section>
 
       {isVisibleModal ? (
         <Modal onSetModal={handleModal}>
-          <h1>Modal</h1>
+          <AddStudent
+            onClose={handleModal}
+            onAddStudent={handleUpateStudents}
+            poloId={id}
+          />
         </Modal>
       ) : null}
     </main>

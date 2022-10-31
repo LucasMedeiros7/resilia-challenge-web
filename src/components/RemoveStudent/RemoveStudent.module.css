@@ -1,4 +1,4 @@
-.form_remove,
+.container_remove,
 .warning {
   display: flex;
   flex-direction: column;
@@ -7,26 +7,26 @@
   color: #fff;
 }
 
-.form_remove {
+.container_remove {
   gap: 52px;
   padding: 64px 122px;
 }
 
-.form_remove .svg {
+.container_remove .svg {
   color: #d73754;
   margin-bottom: 6px;
 }
 
-.form_remove h2 {
+.container_remove h2 {
   margin-bottom: 8px;
 }
 
-.form_remove .buttons {
+.container_remove .buttons {
   display: flex;
   gap: 9px;
 }
 
-.form_remove button {
+.container_remove button {
   border: none;
   border-radius: 8px;
   padding: 15px 34px;
@@ -36,21 +36,21 @@
   transition: 0.12s;
 }
 
-.form_remove .btn_cancel {
+.container_remove .btn_cancel {
   background-color: #dbdcdd;
   color: #737380;
 }
 
-.form_remove .btn_cancel:hover {
+.container_remove .btn_cancel:hover {
   background-color: #cecece;
 }
 
-.form_remove .btn_remove {
+.container_remove .btn_remove {
   background-color: #e73f5d;
   width: max-content;
   color: #fefefe;
 }
 
-.form_remove .btn_remove:hover {
+.container_remove .btn_remove:hover {
   background-color: #d73754;
 }

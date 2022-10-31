@@ -1,0 +1,63 @@
+.form_add_student {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  padding: 64px 122px;
+  color: #fff;
+}
+
+.form_add_student h2 {
+  margin-bottom: 22px;
+}
+
+.form_add_student button {
+  margin-top: 22px;
+}
+
+.form_add_student input {
+  max-width: 436px;
+  width: 90%;
+  height: 42px;
+  border-radius: 8px;
+  border: none;
+  box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.04);
+  padding-left: 16px;
+  font-size: 14px;
+  color: #737380;
+  outline: none;
+}
+
+.form_add_student .buttons {
+  display: flex;
+  gap: 9px;
+}
+
+.form_add_student button {
+  border: none;
+  border-radius: 8px;
+  padding: 15px 34px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.12s;
+}
+
+.form_add_student .btn_cancel {
+  background-color: #dbdcdd;
+  color: #737380;
+}
+
+.form_add_student .btn_cancel:hover {
+  background-color: #cecece;
+}
+
+.form_add_student .btn_add_student {
+  background-color: #ffd000;
+  width: max-content;
+  color: #000000;
+}
+
+.form_add_student .btn_add_student:hover {
+  background-color: #fad945d3;
+}

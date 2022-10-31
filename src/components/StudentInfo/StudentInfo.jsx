@@ -4,8 +4,9 @@ import { useState } from 'react';
 import { RemoveStudent } from '../RemoveStudent/RemoveStudent';
 
 import styles from './StudentInfo.module.css';
+import { TransferStudent } from '../TransferStudent/TransferStudent';
 
-export function StudentInfo({ student, onDelete }) {
+export function StudentInfo({ student, updateStudents }) {
   const { enrollment, name, email } = student;
   const [isVisibleModal, setIsVisibleModal] = useState(false);
   const [modalContent, setModalContent] = useState('');
@@ -16,10 +17,18 @@ export function StudentInfo({ student, onDelete }) {
         <RemoveStudent
           onClose={handleModal}
           enrollment={enrollment}
-          onDelete={onDelete}
+          onDelete={updateStudents}
         />
       );
-    } else if (modalContent === 'transfer') return <h1>Add</h1>;
+    } else if (modalContent === 'transfer') {
+      return (
+        <TransferStudent
+          onTransferStudent={updateStudents}
+          onClose={handleModal}
+          enrollment={enrollment}
+        />
+      );
+    }
   }
 
   function handleModal() {
@@ -35,6 +44,7 @@ export function StudentInfo({ student, onDelete }) {
 
         <li className={styles.button_li_1}>
           <button
+            alt="transferir"
             onClick={() => {
               setModalContent('transfer');
               handleModal();
@@ -46,6 +56,7 @@ export function StudentInfo({ student, onDelete }) {
         <li className={styles.button_li_2}>
           <button>
             <X
+              alt="Remover"
               size={28}
               className={styles.svg}
               weight="light"
