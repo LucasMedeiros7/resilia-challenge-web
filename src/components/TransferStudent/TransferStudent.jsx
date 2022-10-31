@@ -1,3 +1,4 @@
+import { UserSwitch } from 'phosphor-react';
 import { transferStudent } from '../../services/studentServices';
 import styles from './TransferStudent.module.css';
 
@@ -33,7 +34,11 @@ export function TransferStudent({ onTransferStudent, onClose, enrollment }) {
 
   return (
     <form className={styles.form_transfer_student} onSubmit={handleTransfer}>
-      <h2>Transferir aluna(o)</h2>
+      <UserSwitch size={52} weight="light" />
+      <header>
+        <h2>Transferir aluna(o)</h2>
+        <p>Escolha um polo para efetuar a tranferência</p>
+      </header>
       <div className={styles.selects}>
         <label htmlFor="polos">Polos disponíveis</label>
         <select name="polos" id="polos">

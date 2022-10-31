@@ -3,11 +3,14 @@
   flex-direction: column;
   gap: 12px;
   align-items: center;
-  padding: 64px 122px;
+  padding: 44px 32px 70px;
   color: #fff;
 }
 
-.form_transfer_student h2 {
+.form_transfer_student header {
+  display: grid;
+  text-align: center;
+  gap: 12px;
   margin-bottom: 22px;
 }
 
