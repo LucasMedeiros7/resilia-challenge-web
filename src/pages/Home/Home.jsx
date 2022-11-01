@@ -9,18 +9,15 @@ export function Home() {
   const [polos, setPolos] = useState([]);
 
   function filterPolos(polos, search) {
-    return polos.filter(polo =>
+    const filterPolos = polos.filter(polo =>
       normalizeName(polo.name).includes(normalizeName(search))
     );
+    return filterPolos;
   }
 
   async function fetchData() {
-    try {
-      const response = await getAllPolos();
-      setPolos(response);
-    } catch (e) {
-      console.log(err);
-    }
+    const response = await getAllPolos();
+    setPolos(response);
   }
 
   useEffect(() => {

@@ -24,12 +24,8 @@ export function Polo() {
   }
 
   async function fetchData() {
-    try {
-      const response = await getStudentsByPoloId(id);
-      setStudents(response);
-    } catch (err) {
-      console.log(err);
-    }
+    const response = await getStudentsByPoloId(id);
+    setStudents(response);
   }
 
   function handleUpateStudents() {
@@ -49,7 +45,7 @@ export function Polo() {
             weight="regular"
             className={styles.exit}
             alt="Voltar"
-            onClick={() => navigate('/')}
+            onClick={() => navigate('/resilia-challenge-web')}
           />
           Polo - {poloName}
         </h1>
