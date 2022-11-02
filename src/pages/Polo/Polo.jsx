@@ -16,6 +16,7 @@ export function Polo() {
   const [isVisibleModal, setIsVisibleModal] = useState(false);
   const [students, setStudents] = useState([]);
   const [modifyStudents, setModifyStudents] = useState(false);
+  const [isFetching, setIsFechting] = useState(true);
 
   const navigate = useNavigate();
 
@@ -24,7 +25,9 @@ export function Polo() {
   }
 
   async function fetchData() {
-    const response = await getStudentsByPoloId(id);
+    const response = await getStudentsByPoloId(id).finally(() =>
+      setIsFechting(!isFetching)
+    );
     setStudents(response);
   }
 
@@ -45,7 +48,7 @@ export function Polo() {
             weight="regular"
             className={styles.exit}
             alt="Voltar"
-            onClick={() => navigate('/resilia-challenge-web')}
+            onClick={() => navigate('/')}
           />
           Polo - {poloName}
         </h1>
@@ -55,16 +58,19 @@ export function Polo() {
         </button>
       </header>
 
-      <section className={styles.students}>
-        {students?.map((student, key) => (
-          <StudentInfo
-            key={key}
-            student={student}
-            updateStudents={handleUpateStudents}
-          />
-        ))}
-      </section>
-
+      {isFetching ? (
+        <h1 style={{ color: '#fff', marginTop: '50px' }}>Carregando...</h1>
+      ) : (
+        <section className={styles.students}>
+          {students?.map((student, key) => (
+            <StudentInfo
+              key={key}
+              student={student}
+              updateStudents={handleUpateStudents}
+            />
+          ))}
+        </section>
+      )}
       {isVisibleModal ? (
         <Modal onSetModal={handleModal}>
           <AddStudent

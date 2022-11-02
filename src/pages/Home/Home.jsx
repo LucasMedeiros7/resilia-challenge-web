@@ -7,6 +7,7 @@ import { normalizeName } from '../../utils/normalizeName';
 export function Home() {
   const [search, setSearch] = useState('');
   const [polos, setPolos] = useState([]);
+  const [isFetching, setIsFechting] = useState(true);
 
   function filterPolos(polos, search) {
     const filterPolos = polos.filter(polo =>
@@ -16,7 +17,7 @@ export function Home() {
   }
 
   async function fetchData() {
-    const response = await getAllPolos();
+    const response = await getAllPolos().finally(() => setIsFechting(!isFetching));
     setPolos(response);
   }
 
@@ -39,12 +40,15 @@ export function Home() {
           }}
         />
       </header>
-
-      <section className={styles.polos}>
-        {filteredPolos?.map((polo, index) => (
-          <PoloCard key={index} polo={polo} quantity={polo.students.length} />
-        ))}
-      </section>
+      {isFetching ? (
+        <h1 style={{ color: '#fff', marginTop: '50px' }}>Carregando...</h1>
+      ) : (
+        <section className={styles.polos}>
+          {filteredPolos?.map((polo, index) => (
+            <PoloCard key={index} polo={polo} quantity={polo.students.length} />
+          ))}
+        </section>
+      )}
     </main>
   );
 }
