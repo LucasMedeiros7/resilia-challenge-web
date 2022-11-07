@@ -7,9 +7,9 @@ import './global.css';
 export function App() {
   return (
     <Routes>
-      <Route path="*" element={<Navigate to="/" replace />} />
-      <Route path="/" element={<Home />} />
-      <Route path="polos/:id" element={<Polo />} />
+      <Route path="*" element={<Navigate to="/resilia-challenge-web" replace />} />
+      <Route path="/resilia-challenge-web" element={<Home />} />
+      <Route path="/resilia-challenge-web/polos/:id" element={<Polo />} />
     </Routes>
   );
 }

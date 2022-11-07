@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { PoloCard } from '../../components/PoloCard/PoloCard';
 import { getAllPolos } from '../../services/poloServices';
 import { normalizeName } from '../../utils/normalizeName';
+import { SkeletonLoad } from '../../components/SkeletonLoad/SkeletonLoad';
 
 export function Home() {
   const [search, setSearch] = useState('');
@@ -41,7 +42,11 @@ export function Home() {
         />
       </header>
       {isFetching ? (
-        <h1 style={{ color: '#fff', marginTop: '50px' }}>Carregando...</h1>
+        <section className={styles.polos}>
+          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13].map(card => (
+            <SkeletonLoad />
+          ))}
+        </section>
       ) : (
         <section className={styles.polos}>
           {filteredPolos?.map((polo, index) => (
