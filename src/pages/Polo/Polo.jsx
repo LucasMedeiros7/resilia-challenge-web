@@ -48,7 +48,7 @@ export function Polo() {
             weight="regular"
             className={styles.exit}
             alt="Voltar"
-            onClick={() => navigate('/resilia-challenge-web')}
+            onClick={() => navigate('/')}
           />
           Polo - {poloName}
         </h1>

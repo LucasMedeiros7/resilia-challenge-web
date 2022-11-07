@@ -9,9 +9,7 @@ export function PoloCard({ polo, quantity }) {
 
   return (
     <div
-      onClick={() =>
-        navigate(`/resilia-challenge-web/polos/${id}`, { state: poloName })
-      }
+      onClick={() => navigate(`/polos/${id}`, { state: poloName })}
       className={styles.card}
     >
       <h2>{poloName}</h2>
