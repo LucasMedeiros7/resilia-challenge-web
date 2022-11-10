@@ -32,6 +32,7 @@ export function Polo() {
   }
 
   function handleUpateStudents() {
+    setIsFechting(!isFetching);
     setModifyStudents(!modifyStudents);
   }
 
