@@ -1,10 +1,10 @@
 import { X } from 'phosphor-react';
-import { Modal } from '../Modal/Modal';
+import { Modal } from '../Modal';
 import { useState } from 'react';
-import { RemoveStudent } from '../RemoveStudent/RemoveStudent';
+import { RemoveStudent } from '../RemoveStudent';
 
-import styles from './StudentInfo.module.css';
-import { TransferStudent } from '../TransferStudent/TransferStudent';
+import styles from './styles.module.css';
+import { TransferStudent } from '../TransferStudent';
 
 export function StudentInfo({ student, updateStudents }) {
   const { enrollment, name, email } = student;

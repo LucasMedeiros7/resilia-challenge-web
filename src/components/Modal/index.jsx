@@ -1,5 +1,5 @@
 import { X } from 'phosphor-react';
-import styles from './Modal.module.css';
+import styles from './styles.module.css';
 
 export function Modal({ onSetModal, children }) {
   function handleOutSideClick(event) {

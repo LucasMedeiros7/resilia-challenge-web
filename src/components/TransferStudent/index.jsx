@@ -1,6 +1,6 @@
 import { UserSwitch } from 'phosphor-react';
-import { transferStudent } from '../../services/studentServices';
-import styles from './TransferStudent.module.css';
+import { transferStudent } from '../../services';
+import styles from './styles.module.css';
 
 const poloOptions = [
   { id: 1, name: 'Rio de Janeiro' },

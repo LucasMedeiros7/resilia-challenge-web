@@ -1,7 +1,6 @@
 import api from './api';
 
 async function addStudent(studentData) {
-  console.log(studentData);
   try {
     const response = await api.post('/students', studentData, {
       headers: { 'Content-Type': 'application/json' }

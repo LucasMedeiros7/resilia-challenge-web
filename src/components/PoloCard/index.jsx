@@ -1,7 +1,7 @@
 import { UserCircle } from 'phosphor-react';
 import { useNavigate } from 'react-router-dom';
 
-import styles from './PoloCard.module.css';
+import styles from './styles.module.css';
 
 export function PoloCard({ polo, quantity }) {
   const { name: poloName, id } = polo;
