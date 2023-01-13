@@ -1,13 +1,13 @@
 import { Student } from 'phosphor-react';
 import { useState } from 'react';
-import { addStudent } from '../../services/studentServices';
-import styles from './AddStudent.module.css';
+import { addStudent } from '../../services';
+import styles from './styles.module.css';
 
 export function AddStudent({ onClose, onAddStudent, poloId }) {
   const [studentData, setStudentData] = useState({
     name: '',
     email: '',
-    polo_id: Number(poloId)
+    polo_id: Number(poloId),
   });
 
   function handleCancel() {
@@ -35,7 +35,7 @@ export function AddStudent({ onClose, onAddStudent, poloId }) {
         onChange={e => {
           setStudentData({
             ...studentData,
-            name: e.target.value
+            name: e.target.value,
           });
         }}
       />
@@ -46,13 +46,17 @@ export function AddStudent({ onClose, onAddStudent, poloId }) {
         onChange={e => {
           setStudentData({
             ...studentData,
-            email: e.target.value
+            email: e.target.value,
           });
         }}
       />
 
       <div className={styles.buttons}>
-        <button type="submit" onClick={handleCancel} className={styles.btn_cancel}>
+        <button
+          type="submit"
+          onClick={handleCancel}
+          className={styles.btn_cancel}
+        >
           Cancelar
         </button>
         <button

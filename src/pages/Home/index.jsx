@@ -1,9 +1,9 @@
-import styles from './Home.module.css';
+import styles from './styles.module.css';
 import { useEffect, useState } from 'react';
-import { PoloCard } from '../../components/PoloCard/PoloCard';
-import { getAllPolos } from '../../services/poloServices';
+import { PoloCard } from '../../components/PoloCard';
+import { getAllPolos } from '../../services';
 import { normalizeName } from '../../utils/normalizeName';
-import { SkeletonLoad } from '../../components/SkeletonLoad/SkeletonLoad';
+import { SkeletonLoad } from '../../components/SkeletonLoad';
 
 export function Home() {
   const [search, setSearch] = useState('');

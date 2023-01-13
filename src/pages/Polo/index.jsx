@@ -2,12 +2,12 @@ import { useEffect, useState } from 'react';
 import { CaretLeft, Plus } from 'phosphor-react';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 
-import { Modal } from '../../components/Modal/Modal';
-import { StudentInfo } from '../../components/StudentInfo/StudentInfo';
-import { getStudentsByPoloId } from '../../services/studentServices';
+import { Modal } from '../../components/Modal';
+import { StudentInfo } from '../../components/StudentInfo';
+import { getStudentsByPoloId } from '../../services/';
 
-import styles from './Polo.module.css';
-import { AddStudent } from '../../components/AddStudent/AddStudent';
+import { AddStudent } from '../../components/AddStudent';
+import styles from './styles.module.css';
 
 export function Polo() {
   const { id } = useParams();

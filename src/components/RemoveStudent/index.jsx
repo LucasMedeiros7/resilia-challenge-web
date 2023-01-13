@@ -1,7 +1,7 @@
 import { Warning } from 'phosphor-react';
-import { deleteStudent } from '../../services/studentServices';
+import { deleteStudent } from '../../services';
 
-import styles from './RemoveStudent.module.css';
+import styles from './styles.module.css';
 
 export function RemoveStudent({ onClose, enrollment, onDelete }) {
   function handleCancel() {
